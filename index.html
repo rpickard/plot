@@ -28,6 +28,7 @@ console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const technology = urlParams.get('technology_score')
 const business = urlParams.get('business_score')
+const maturity = urlParams.get('maturity')
 
 document.getElementById("maturity").innerHTML = maturity;
 // document.getElementById("strat").innerHTML = strat;
