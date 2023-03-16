@@ -6,8 +6,13 @@
 <div id="myPlot" style="width:100%;max-width:700px"></div>
 
 <script>
-var xArray = [50,60,70,80,90,100,110,120,130,140,150];
-var yArray = [7,8,8,9,9,9,10,11,14,14,15];
+const queryString = window.location.search;
+console.log(queryString);
+const technology = urlParams.get('tech')
+const strategy = urlParams.get('strat')
+
+var xArray = [technology];
+var yArray = [strategy];
 
 // Define Data
 var data = [{
@@ -18,9 +23,9 @@ var data = [{
 
 // Define Layout
 var layout = {
-  xaxis: {range: [40, 160], title: "Square Meters"},
-  yaxis: {range: [5, 16], title: "Price in Millions"},  
-  title: "House Prices vs. Size"
+  xaxis: {range: [0, 30], title: "Tech Maturity"},
+  yaxis: {range: [0, 10], title: "Business Maturity"},  
+  title: "MACH Maturity"
 };
 
 // Display using Plotly
