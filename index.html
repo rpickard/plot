@@ -2,8 +2,25 @@
 <html>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <body>
+  <h1> Congratulations! </h1>
+  <h2> We have assessed your MACH Maturity as: <span id="maturity"/></h2>
 
-<div id="myPlot" style="width:100%;max-width:700px"></div>
+  <div id="myPlot" style="width:100%;max-width:700px"></div>
+
+  <div>
+    <p> If you need any help getting the most out of MACH, our ISV Members and SI Partners are well placed to advise you on your journey. </p>
+
+<!--     <p> <b>Detailed Results:</b></p>
+
+    <p>Strategy & Transformation: <span id="strat"/> </b></p>
+    <p>Organization & Governance: <span id="org"/></b></p>
+    <p>Process & Metrics: <span id="process"/></b></p>
+    <p>Technology & Architecture: <span id="tech"/></b></p>
+    <p>People & Culture: <span id="people"/></b></p>
+    <p>Business Intelligence: <span id="biz"/></b></p> -->
+
+    <p>If you would like to speak to someone about your results please reach out to the Tech Council at <a href="mailto:techcouncil@machalliance.org =">techcouncil@machalliance.org </a> </p>
+  <div/>
 
 <script>
 const queryString = window.location.search;
@@ -11,6 +28,15 @@ console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const technology = urlParams.get('technology_score')
 const business = urlParams.get('business_score')
+
+document.getElementById("maturity").innerHTML = maturity;
+// document.getElementById("strat").innerHTML = strat;
+// document.getElementById("org").innerHTML = org;
+// document.getElementById("process").innerHTML = process;
+// document.getElementById("tech").innerHTML = tech;
+// document.getElementById("people").innerHTML = people;
+// document.getElementById("biz").innerHTML = biz;
+  
 
 var xArray = [technology];
 var yArray = [business];
