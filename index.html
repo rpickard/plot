@@ -43,14 +43,114 @@ var yArray = [urlParams.get('business_score')];
 var data = [{
   x:xArray,
   y:yArray,
-  mode:"markers"
+  mode:"markers+text",
+  marker: {
+    color: "black",
+    size: 20,
+  },
+  textposition: 'top',
+  text: [urlParams.get('maturity')]
 }];
 
 // Define Layout
 var layout = {
-  xaxis: {range: [0, 1], title: "Technology Maturity"},
-  yaxis: {range: [0, 1], title: "Business Maturity"},  
-  title: "MACH Maturity"
+  xaxis: {range: [0, 1], showticklabels: false, showgrid: false, showgrid: false, title: "Technology Maturity"},
+  yaxis: {range: [0, 1], showticklabels: false, showgrid: false, showgrid: false, title: "Business Maturity"},  
+  title: "MACH Maturity",
+  shapes: [
+        {
+            type: 'rect',
+            xref: 'x',
+            yref: 'paper',
+            x0: 0,
+            y0: 0,
+            x1: 0.5,
+            y1: 0.5,
+            fillcolor: 'red',
+            opacity: 0.6,
+            line: {
+                width: 0
+            },layer:'below'
+        },
+    {
+          
+            type: 'rect',
+            xref: 'x',
+            yref: 'paper',
+            x0: 0.5,
+            y0: 0.5,
+            x1: 1,
+            y1: 1,
+            fillcolor: 'green',
+            opacity: 0.6,
+            line: {
+                width: 0
+            },layer:'below'
+        },
+    {
+          
+            type: 'rect',
+            xref: 'x',
+            yref: 'paper',
+            x0: 0.5,
+            y0: 0,
+            x1: 1,
+            y1: 0.5,
+            fillcolor: 'orange',
+            opacity: 0.6,
+            line: {
+                width: 0
+            },
+            layer:'below'
+        },
+    {
+          
+            type: 'rect',
+            xref: 'x',
+            yref: 'paper',
+            x0: 0,
+            y0: 0.5,
+            x1: 0.5,
+            y1: 1,
+            fillcolor: 'orange',
+            opacity: 0.6,
+            line: {
+                width: 0
+            },
+      layer:'below'
+        }
+    ],
+  annotations: [
+    {
+      x: .25,
+      y: .1,
+      xref: 'x',
+      yref: 'y',
+      text: 'Immature',
+      showarrow: false
+    }, {
+      x: .75,
+      y: .1,
+      xref: 'x',
+      yref: 'y',
+      text: 'Strong Technology',
+      showarrow: false
+    }, {
+      x: .25,
+      y: .9,
+      xref: 'x',
+      yref: 'y',
+      text: 'Strong Business',
+      showarrow: false
+    }, {
+      x: .75,
+      y: .9,
+      xref: 'x',
+      yref: 'y',
+      text: 'Mature',
+      showarrow: false
+    }
+  ]
 };
 
 // Display using Plotly
