@@ -26,21 +26,18 @@
 const queryString = window.location.search;
 console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
-const technology = urlParams.get('technology_score')
-const business = urlParams.get('business_score')
-const maturity = urlParams.get('maturity')
 
-document.getElementById("maturity").innerHTML = maturity;
-// document.getElementById("strat").innerHTML = strat;
-// document.getElementById("org").innerHTML = org;
-// document.getElementById("process").innerHTML = process;
-// document.getElementById("tech").innerHTML = tech;
-// document.getElementById("people").innerHTML = people;
-// document.getElementById("biz").innerHTML = biz;
+document.getElementById("maturity").innerHTML = urlParams.get('maturity');
+// document.getElementById("strat").innerHTML = urlParams.get('strat');
+// document.getElementById("org").innerHTML = urlParams.get('org');;
+// document.getElementById("process").innerHTML = urlParams.get('process');
+// document.getElementById("tech").innerHTML = urlParams.get('tech');;
+// document.getElementById("people").innerHTML = urlParams.get('people');;
+// document.getElementById("biz").innerHTML = urlParams.get('biz');;
   
 
-var xArray = [technology];
-var yArray = [business];
+var xArray = [urlParams.get('technology_score')];
+var yArray = [urlParams.get('business_score')];
 
 // Define Data
 var data = [{
