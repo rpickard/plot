@@ -8,6 +8,7 @@
 <script>
 const queryString = window.location.search;
 console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
 const technology = urlParams.get('tech')
 const strategy = urlParams.get('strat')
 
