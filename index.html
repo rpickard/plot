@@ -10,9 +10,10 @@
   <div>
     <p> If you need any help getting the most out of MACH, our ISV Members and SI Partners are well placed to advise you on your journey. </p>
 
-<!--     <p> <b>Detailed Results:</b></p>
+    <p> <b>Detailed Results:</b></p>
 
-    <p>Strategy & Transformation: <span id="strat"/> </b></p>
+    <div id="spiderPlot" style="width:100%;max-width:700px"></div>
+     <!-- <p>Strategy & Transformation: <span id="strat"/> </b></p>
     <p>Organization & Governance: <span id="org"/></b></p>
     <p>Process & Metrics: <span id="process"/></b></p>
     <p>Technology & Architecture: <span id="tech"/></b></p>
@@ -29,7 +30,7 @@ const urlParams = new URLSearchParams(queryString);
 
 document.getElementById("maturity").innerHTML = urlParams.get('maturity');
 // document.getElementById("strat").innerHTML = urlParams.get('strat');
-// document.getElementById("org").innerHTML = urlParams.get('org');;
+// document.getElementById("org").innerHTML = urlParams.get('org');
 // document.getElementById("process").innerHTML = urlParams.get('process');
 // document.getElementById("tech").innerHTML = urlParams.get('tech');;
 // document.getElementById("people").innerHTML = urlParams.get('people');;
@@ -155,6 +156,26 @@ var layout = {
 
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
+
+
+data = [{
+  type: 'scatterpolar',
+  r: [urlParams.get('strat'),  urlParams.get('org'),  urlParams.get('process'),  urlParams.get('tech'),  urlParams.get('people'), urlParams.get('biz'), urlParams.get('strat')],
+  theta: ['Strategy & Transformation','Organization & Governance','Process & Metrics', 'Technology & Architecture', 'People & Culture', 'Business Intelligence', 'Strategy & Transformation' ],
+  fill: 'toself'
+}]
+
+layout = {
+  polar: {
+    radialaxis: {
+      visible: true,
+      range: [0, 1]
+    }
+  },
+  showlegend: false
+}
+
+Plotly.newPlot("spiderPlot", data, layout)
 </script>
 
 </body>
