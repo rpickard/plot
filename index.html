@@ -160,7 +160,7 @@ Plotly.newPlot("myPlot", data, layout);
 
 data = [{
   type: 'scatterpolar',
-  r: [urlParams.get('strat'),  urlParams.get('org'),  urlParams.get('process'),  urlParams.get('tech'),  urlParams.get('people'), urlParams.get('biz'), urlParams.get('strat')],
+  r: [urlParams.get('strat')/10,  urlParams.get('org')/15,  urlParams.get('process')/15,  urlParams.get('tech')/30,  urlParams.get('people')/15, urlParams.get('biz')/15, urlParams.get('strat')/10],
   theta: ['Strategy & Transformation','Organization & Governance','Process & Metrics', 'Technology & Architecture', 'People & Culture', 'Business Intelligence', 'Strategy & Transformation' ],
   fill: 'toself'
 }]
