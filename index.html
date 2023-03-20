@@ -26,14 +26,14 @@ const urlParams = new URLSearchParams(queryString);
 
 document.getElementById("maturity").innerHTML = urlParams.get('maturity');
 var nextSteps =""
-if  (urlParams.get('maturity')!="Strong") nextSteps = "<p><b>Next Steps:</b> Below are a list of suggestions for how you could improve your maturity</p>";
-if  (urlParams.get('strat')<.5) nextSteps += "<p><b>Strategy & Transformation:</b> Spend some time understanding what you would like to get out of MACH with one of our SIs.</p>";
-if  (urlParams.get('org')<.5) nextSteps += "<p><b>Organization & Governance:</b> Focus on your decision making processes and team structure to empower teams to make and own decisions.</p>";
-if  (urlParams.get('process')<.5) nextSteps += "<p><b>Process & Metrics:</b> Invest in improving your delivery processes to enable you to make the most of integrations to multiple external components that are constantly evolving.</p>";
-if  (urlParams.get('tech')<.5) nextSteps += "<p><b>Technology & Architecture:</b> Ask your engineering and architecture teams to come up with a roadmap to enable you to adopt a more MACH focused archicture.  If you need help, please reach out to the Tech Council or on of our SIs</p>"; 
-if  (urlParams.get('people')<.5) nextSteps += "<p><b>People & Culture:</b> Consider a program to engage with your teams with the aim of promoting a shared vision of a more Agile and Digital future</p>";
-if  (urlParams.get('biz')<.5) nextSteps += "<p><b>Business Intelligence:</b> Invest in improving your ability to track metrics across applications and experiences as this is key to adopting MACH</p>";
-  
+if  (urlParams.get('maturity')!="Strong") nextSteps = "<p><b>Next Steps:</b> Below are a list of suggestions for how you could improve your maturity</p><ul>";
+if  (urlParams.get('strat')<.5) nextSteps += "<li><p><b>Strategy & Transformation:</b> Spend some time understanding what you would like to get out of MACH with one of our SIs.</p></li>";
+if  (urlParams.get('org')<.5) nextSteps += "<li><p><b>Organization & Governance:</b> Focus on your decision making processes and team structure to empower teams to make and own decisions.</p></li>";
+if  (urlParams.get('process')<.5) nextSteps += "<li><p><b>Process & Metrics:</b> Invest in improving your delivery processes to enable you to make the most of integrations to multiple external components that are constantly evolving.</p></li>";
+if  (urlParams.get('tech')<.5) nextSteps += "<li><p><b>Technology & Architecture:</b> Ask your engineering and architecture teams to come up with a roadmap to enable you to adopt a more MACH focused archicture.  If you need help, please reach out to the Tech Council or on of our SIs</p></li>"; 
+if  (urlParams.get('people')<.5) nextSteps += "<li><p><b>People & Culture:</b> Consider a program to engage with your teams with the aim of promoting a shared vision of a more Agile and Digital future</p></li>";
+if  (urlParams.get('biz')<.5) nextSteps += "<li><p><b>Business Intelligence:</b> Invest in improving your ability to track metrics across applications and experiences as this is key to adopting MACH</p></li>";
+if  (urlParams.get('maturity')!="Strong") nextSteps += "</ul>";
 document.getElementById("nextSteps").innerHTML = nextSteps;
   
 
