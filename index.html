@@ -15,7 +15,7 @@
     <div id="spiderPlot" style="width:100%;max-width:700px"></div>
 
     <div id="nextStepsHeader"/>
-    <div id="nextSteps"/>
+    <div id="nextStepsContent"/>
     
     <p>If you would like to speak to someone about your results please reach out to the Tech Council at <a href="mailto:techcouncil@machalliance.org =">techcouncil@machalliance.org </a> </p>
   <div/>
@@ -35,7 +35,7 @@ if  (urlParams.get('tech')<.5) nextSteps += "<p><b>Technology & Architecture:</b
 if  (urlParams.get('people')<.5) nextSteps += "<p><b>People & Culture:</b> Consider a program to engage with your teams with the aim of promoting a shared vision of a more Agile and Digital future</p>";
 if  (urlParams.get('biz')<.5) nextSteps += "<p><b>Business Intelligence:</b> Invest in improving your ability to track metrics across applications and experiences as this is key to adopting MACH</p>";
   
-document.getElementById("nextSteps").innerHTML = nextSteps;
+document.getElementById("nextStepsContent").innerHTML = nextSteps;
   
 
 var xArray = [urlParams.get('technology_score')];
