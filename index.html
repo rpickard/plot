@@ -13,7 +13,8 @@
     <p> <b>Detailed Results:</b></p>
 
     <div id="spiderPlot" style="width:100%;max-width:700px"></div>
-     <!-- <p>Strategy & Transformation: <span id="strat"/> </b></p>
+
+    <!-- <p>Strategy & Transformation: <span id="strat"/> </b></p>
     <p>Organization & Governance: <span id="org"/></b></p>
     <p>Process & Metrics: <span id="process"/></b></p>
     <p>Technology & Architecture: <span id="tech"/></b></p>
@@ -160,7 +161,7 @@ Plotly.newPlot("myPlot", data, layout);
 
 data = [{
   type: 'scatterpolar',
-  r: [urlParams.get('strat')/10,  urlParams.get('org')/15,  urlParams.get('process')/15,  urlParams.get('tech')/30,  urlParams.get('people')/15, urlParams.get('biz')/15, urlParams.get('strat')/10],
+  r: [urlParams.get('strat'),  urlParams.get('org'),  urlParams.get('process'),  urlParams.get('tech'),  urlParams.get('people'), urlParams.get('biz'), urlParams.get('strat')],
   theta: ['Strategy & Transformation','Organization & Governance','Process & Metrics', 'Technology & Architecture', 'People & Culture', 'Business Intelligence', 'Strategy & Transformation' ],
   fill: 'toself'
 }]
